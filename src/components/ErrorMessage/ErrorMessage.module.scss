@@ -1,0 +1,27 @@
+@import '../../assets/sass/animations';
+
+.errorMessage {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto 0;
+  padding: 20px;
+  position: relative;
+  bottom: 75px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation: fadeIn 1s;
+
+  .errorIcon {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    margin-right: 10px;
+  }
+
+  .errorText {
+    font-size: 17px;
+  }
+}

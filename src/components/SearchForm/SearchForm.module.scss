@@ -1,0 +1,68 @@
+@import '../../assets/sass/base';
+
+.searchForm {
+  position: relative;
+  margin: 0 auto;
+  max-width: 500px;
+  transition: 1s;
+  top: 25%;
+
+  @media only screen and (min-width: $laptopL) {
+    max-width: 600px;
+  }
+
+  @media only screen and (min-width: $desktop) {
+    max-width: 700px;
+  }
+
+  input, select {
+    margin-top: 15px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 10px 15px 10px 40px;
+    color: #777;
+    transition: 0.2s;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    outline: none;
+
+    &::placeholder {
+      color: #ccc;
+    }
+
+    &:focus {
+      color: #191919;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    @media only screen and (min-width: $tablet) {
+      font-size: 18px;
+    }
+
+    @media only screen and (min-width: $laptop) {
+      border-radius: 30px;
+    }
+  }
+
+  select {
+    padding-left: 10px;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    text-align: center;
+    font-size: 21px;
+    color: #777;
+    bottom: 3px;
+    left: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s;
+  }
+}
+
+.higher {
+  top: 0;
+}
