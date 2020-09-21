@@ -1,0 +1,39 @@
+@import '../../../assets/sass/base';
+
+.forecastItem {
+  flex-shrink: 0;
+  flex-basis: 90px;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media only screen and (min-width: $tablet) {
+    flex-basis: 110px;
+  }
+
+  @media only screen and (min-width: $laptop) {
+    flex-basis: 125px;
+  }
+
+  @media only screen and (min-width: $laptopL) {
+    flex-basis: 140px;
+  }
+
+  div {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+}

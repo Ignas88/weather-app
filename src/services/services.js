@@ -10,7 +10,7 @@ export const getCurrentLocation = () => {
   }).catch(err => err);
 }
 
-export const getWeatherAndForecast = (param1 = 'LT', param2 = 'Kaunas', byCoords) => {
+export const getWeatherAndForecast = (param1 , param2 , byCoords) => {
   const APIkey = process.env.REACT_APP_WEATHER_API_KEY;
   let query = byCoords ? `lat=${param1}&lon=${param2}` : `q=${param1},${param2}`
   const weather = `https://api.openweathermap.org/data/2.5/weather?${query}&APPID=${APIkey}&units=metric`;
@@ -24,10 +24,12 @@ export const getWeatherAndForecast = (param1 = 'LT', param2 = 'Kaunas', byCoords
     })
     .then(([{name, sys, weather, main, clouds, wind}, {list}]) => {
       const weatherInfo = {
+        id: sys.id,
         city: name,
         country: sys.country,
         date: currentDateToString(days, months),
         description: weather[0].description,
+        icon: weather[0].icon,
         main: weather[0].main,
         temp: main.temp,
         highestTemp: main.temp_max,
@@ -52,4 +54,21 @@ export const getWeatherAndForecast = (param1 = 'LT', param2 = 'Kaunas', byCoords
       }
     });
 }
+
+export const setLocStorage = (name, arr) => {
+  try {
+    window.localStorage.setItem(name, JSON.stringify(arr));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getLocStorage = (name) => {
+  try {
+    return JSON.parse(window.localStorage.getItem(name));
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
 

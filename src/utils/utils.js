@@ -8,3 +8,7 @@ export const currentDateToString = (days, months) => {
 export const timeToString = (ms) => {
   return new Date(ms * 1000).toLocaleTimeString().replace(/:\d+\s/, ' ');
 }
+
+export const formatTemp = (temp) => {
+  return Math.floor(temp * 1);
+}

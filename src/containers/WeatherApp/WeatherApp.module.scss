@@ -1,7 +1,7 @@
 @import '../../assets/sass/base';
 
 .weatherApp {
-  .container {
+  .main {
     max-width: 1500px;
     margin: 0 auto;
     height: calc(100vh - 64px);
@@ -31,6 +31,25 @@
 
       @media only screen and (min-width: $desktop) {
         font-size: 70px;
+      }
+    }
+
+    .favourites {
+      h2 {
+        margin-bottom: 50px;
+        font-size: 30px;
+
+        @media only screen and (min-width: $tablet) {
+          font-size: 37px;
+        }
+
+        @media only screen and (min-width: $laptop) {
+          font-size:  43px;
+        }
+
+        @media only screen and (min-width: $laptopL) {
+          font-size: 52px;
+        }
       }
     }
   }
